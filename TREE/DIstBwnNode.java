@@ -6,6 +6,8 @@ This means that the 2^i th parent of the node is
 2^i - 1 th parent of the node ka 2^i-1 th parent
 */
 
+// Distance Queries : https://cses.fi/problemset/task/1135
+
 /*
 DISTANCE BETWEEN THE TWO NODES
 FOR EACH QUERY OF THE FORM X AND Y FIND THE DISTANCE FROM X TO Y
