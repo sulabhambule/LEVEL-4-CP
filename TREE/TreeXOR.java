@@ -47,7 +47,7 @@ public class TreeXOR {
     long[] answer = new long[n];
 
     dfs(0, -1, a, adj, subTreeSize, answer);
-    dfs2(0, 0, answer[0], adj, answer, a, subTreeSize, n);
+    dfs2(0, -1, answer[0], adj, answer, a, subTreeSize, n);
 
     for (long i : answer) {
       out.print(i + " ");
@@ -65,6 +65,13 @@ public class TreeXOR {
       }
     }
   }
+
+  /*
+   * When we are reRoot the node after calculting the tree Xor for the root O,
+   * then we will pass the initial ans.
+   * then while reRooting we will so maths stuff :
+   * long newVal = val + (a[nod] ^ a[adjNod]) * (n - 2 * subTreS[adjNod]);
+   */
 
   private static void dfs2(int node, int parent, long value, List<List<Integer>> adj, long[] answer, long[] a,
       int[] subTreeSize, int n) {
