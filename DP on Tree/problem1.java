@@ -4,7 +4,7 @@ import java.util.*;
 /*
 Problem : Given a tree if the node with sum values, just like house robber probem we need to find out the max amount of money that we can stolem
 we will use the dp to solve this problem,  also we cant take the values from the adjacent node
- */
+*/
 
 public class problem1 {
   public static PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out));
