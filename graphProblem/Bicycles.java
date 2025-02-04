@@ -1,5 +1,3 @@
-package graphProblem;
-
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 import java.io.*;
