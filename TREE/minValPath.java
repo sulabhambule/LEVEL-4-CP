@@ -4,14 +4,14 @@ import java.util.*;
 /*
  * Find the min value on Path. from node u to v
  * Find the max value on the Path.
- * Find the sumn on the path
+ * Find the sum on the path
  * Find the gcd over the path.
  * In the below code just replace the min with max gcd etc
  */
 
 /*
  1) Find the min value on Path : min(a, b) -> min(min(a, lca), min(b. lca));
- - in our binary lifting table we gina be store the min of everry powers of two
+ - in our binary lifting table we gina be store the min of every powers of two
  - par[node][i] = {2ith par, min from node to th ith parent}
  */
 public class minValPath {
@@ -90,6 +90,7 @@ public class minValPath {
     for (int i = 0; i < MAX_LOG; i++)
       par[node][i] = new Pair(0, Integer.MAX_VALUE);
     depth[node] = 1 + depth[parent];
+
     par[node][0] = new Pair(parent, Math.min(arr[node], arr[parent]));
     for (int j = 1; j < MAX_LOG; j++) {
       par[node][j] = new Pair(par[par[node][j - 1].first][j - 1].first,
@@ -152,8 +153,7 @@ public class minValPath {
     }
 
     double nextDouble() {
-      return Double.parseDouble(next());
+      return Double.parseDouble(snext());
     }
   }
-
 }
