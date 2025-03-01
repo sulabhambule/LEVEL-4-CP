@@ -6,12 +6,12 @@ import java.util.*;
  * Find the max value on the Path.
  * Find the sum on the path
  * Find the gcd over the path.
- * In the below code just replace the min with max gcd etc
+ * In the below code just replace the min with max, gcd etc
  */
 
 /*
  1) Find the min value on Path : min(a, b) -> min(min(a, lca), min(b. lca));
- - in our binary lifting table we gina be store the min of every powers of two
+ - in our binary lifting table we gonna be store the min of every powers of two
  - par[node][i] = {2ith par, min from node to th ith parent}
  */
 public class minValPath {

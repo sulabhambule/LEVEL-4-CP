@@ -20,11 +20,6 @@ public class TreeXOR {
     out.close();
   }
 
-  /*
-   * @Sulabh Ambule
-   * - Let's Hope for the best!
-   */
-
   private static void solve() {
     int n = in.nextInt();
     long[] a = new long[n];
