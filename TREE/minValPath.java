@@ -11,7 +11,7 @@ import java.util.*;
 
 /*
  1) Find the min value on Path : min(a, b) -> min(min(a, lca), min(b. lca));
- - in our binary lifting table we gonna be store the min of every powers of two
+ - in our binary lifting table we gona be store the min of every powers of two
  - par[node][i] = {2ith par, min from node to th ith parent}
  */
 public class minValPath {
@@ -153,7 +153,7 @@ public class minValPath {
     }
 
     double nextDouble() {
-      return Double.parseDouble(snext());
+      return Double.parseDouble(next());
     }
   }
 }
