@@ -1,8 +1,8 @@
-public class template {
-  
-}
-
 import java.util.*;
+
+public class template {
+
+}
 
 class SegTree {
   private Node[] tree;
