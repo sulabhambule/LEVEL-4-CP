@@ -18,29 +18,27 @@ public class first_el_greater_X {
 
   static void solve() {
     int n = in.nextInt();
-    int[] arr = new int[n];
+    int q = in.nextInt();
+    long[] arr = new long[n];
     for (int i = 0; i < n; i++) {
-      arr[i] = in.nextInt();
+      arr[i] = in.nextLong();
     }
     SegTree tree = new SegTree(n, arr);
 
-    int q = in.nextInt();
     while (q-- > 0) {
       int type = in.nextInt();
       if (type == 1) {
         int ind = in.nextInt();
-        int x = in.nextInt();
+        long x = in.nextLong();
         tree.makeUpdate(ind, x);
       } else {
-        int l = in.nextInt();
-        int r = in.nextInt();
         int x = in.nextInt();
         // find out first i such that a[i] > x int the range from l -> r.
-        int low = l, high = r;
+        int low = 0, high = n - 1;
         int ans = -1;
         while (low <= high) {
           int mid = (low + high) / 2;
-          if (tree.makeQuery(low, mid).val > x) {
+          if (tree.makeQuery(low, mid).val >= x) {
             ans = mid;
             high = mid - 1;
           } else {
@@ -91,11 +89,11 @@ public class first_el_greater_X {
 
 class SegTree {
   private Node[] tree;
-  private int[] arr;
+  private long[] arr;
   private int n;
   private int s;
 
-  public SegTree(int a_len, int[] a) {
+  public SegTree(int a_len, long[] a) {
     this.arr = a;
     this.n = a_len;
     this.s = 1;
@@ -148,7 +146,7 @@ class SegTree {
     return ans;
   }
 
-  public void makeUpdate(int index, int x) {
+  public void makeUpdate(int index, long x) {
     Update newUpdate = new Update(x);
     update(0, n - 1, 1, index, newUpdate);
   }
@@ -159,13 +157,13 @@ class SegTree {
 }
 
 class Node {
-  int val;
+  long val;
 
   public Node() {
-    this.val = (int) 1e9;
+    this.val = 0;
   }
 
-  public Node(int p1) {
+  public Node(long p1) {
     val = p1;
   }
 
@@ -175,9 +173,9 @@ class Node {
 }
 
 class Update {
-  int x;
+  long x;
 
-  public Update(int x1) {
+  public Update(long x1) {
     this.x = x1;
   }
 
