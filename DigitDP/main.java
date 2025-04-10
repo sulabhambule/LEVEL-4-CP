@@ -19,7 +19,7 @@ public class main {
   private static int fun(int index, int numberMade) {
     // code to print the number from 0 --> 99999
     if (index == 5) {
-      // System.outprintln(numberMade);
+      System.out.println(numberMade);
       return 1;
     }
 
