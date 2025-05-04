@@ -73,8 +73,11 @@ public class TreeXOR {
     answer[node] = value;
     for (int adjNode : adj.get(node)) {
       if (adjNode != parent) {
-        long newValue = value + (a[node] ^ a[adjNode]) * (n - 2 * subTreeSize[adjNode]);
-        dfs2(adjNode, node, newValue, adj, answer, a, subTreeSize, n);
+        // long newValue = value + (a[node] ^ a[adjNode]) * (n - 2 *
+        // subTreeSize[adjNode]);
+        long newV = value - ((a[node] ^ a[adjNode]) * subTreeSize[adjNode])
+            + ((a[node] ^ a[adjNode]) * (n - subTreeSize[adjNode]));
+        dfs2(adjNode, node, newV, adj, answer, a, subTreeSize, n);
       }
     }
   }

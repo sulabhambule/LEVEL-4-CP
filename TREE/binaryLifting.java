@@ -41,7 +41,7 @@ public class binaryLifting {
       int x = in.nextInt();
       int k = in.nextInt();
       int parent = Kthparent(x, k, par);
-      System.out.println(parent == 0 ? -1 : parent);
+      out.println(parent == 0 ? -1 : parent);
     }
   }
 

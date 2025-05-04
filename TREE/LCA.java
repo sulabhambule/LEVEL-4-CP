@@ -49,27 +49,23 @@ public class LCA {
   private static int LCA_(int nodeA, int nodeB) {
     if (nodeA == nodeB)
       return nodeA;
-
     if (depth[nodeA] < depth[nodeB]) {
       int tempNode = nodeA;
       nodeA = nodeB;
       nodeB = tempNode;
     }
-
     int nodeDiff = depth[nodeA] - depth[nodeB];
     for (int j = MAX_LOG - 1; j >= 0; j--) {
       if (((1 << j) & nodeDiff) != 0) {
         nodeA = par[nodeA][j];
       }
     }
-
     for (int j = MAX_LOG - 1; j >= 0; j--) {
       if (par[nodeA][j] != par[nodeB][j]) {
         nodeA = par[nodeA][j];
         nodeB = par[nodeB][j];
       }
     }
-
     return (nodeA != nodeB ? par[nodeA][0] : nodeA);
   }
 
